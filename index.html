@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
 
@@ -7,119 +7,353 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>حاسبة غزل</title>
+<title>Ghazal Calculator</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="manifest" href="manifest.json">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="theme-color" content="#800020">
 
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<meta name="mobile-web-app-capable" content="yes">
+
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+
+<style>
+
+*{
+box-sizing:border-box;
+font-family:Tahoma, Arial, sans-serif;
+}
+
+
+body{
+
+margin:0;
+background:#f8f4f5;
+color:#333;
+
+}
+
+
+.container{
+
+max-width:500px;
+margin:auto;
+padding:20px;
+
+}
+
+
+.header{
+
+text-align:center;
+margin-bottom:25px;
+
+}
+
+
+.header h1{
+
+color:#800020;
+font-size:32px;
+margin-bottom:5px;
+
+}
+
+
+.header p{
+
+color:#777;
+margin:0;
+
+}
+
+
+.section{
+
+background:white;
+border-radius:15px;
+padding:20px;
+margin-bottom:20px;
+box-shadow:0 5px 15px rgba(0,0,0,.08);
+
+}
+
+
+h2{
+
+font-size:20px;
+color:#800020;
+margin-top:0;
+
+}
+
+
+label{
+
+display:block;
+margin:12px 0 6px;
+font-weight:bold;
+
+}
+
+
+input{
+
+width:100%;
+padding:12px;
+border:1px solid #ddd;
+border-radius:10px;
+font-size:16px;
+outline:none;
+
+}
+
+
+input:focus{
+
+border-color:#800020;
+
+}
+
+
+.result{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:#f8f4f5;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+
+}
+
+
+.result-title{
+
+font-weight:bold;
+
+}
+
+
+.result-value{
+
+color:#800020;
+font-size:18px;
+font-weight:bold;
+
+}
+
+
+button{
+
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+background:#800020;
+color:white;
+font-size:17px;
+cursor:pointer;
+
+}
+
+
+button:hover{
+
+opacity:.9;
+
+}
+
+
+.footer{
+
+text-align:center;
+margin-top:20px;
+color:#888;
+font-size:13px;
+
+}
+
+
+</style>
+
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
-<img src="logo.png" class="logo" alt="غزل">
 
-<h1>حاسبة غزل</h1>
+<div class="header">
 
-<p class="subtitle">
-احسبي تكلفة وتسعير منتجات غزل بكل احترافية
-</p>
+<h1>غزل</h1>
 
-<div class="divider"></div>
+<p>حاسبة أسعار وربح المنتجات</p>
+
+</div>
+<div class="section">
+
+<h2>📦 المنتج</h2>
+
+
+<label>
+سعر الشراء
+</label>
+
+<input
+id="buyPrice"
+type="number"
+placeholder="مثال: 200">
+
+
+<label>
+سعر البيع
+</label>
+
+<input
+id="sellPriceMain"
+type="number"
+placeholder="مثال: 350">
+
+
+<div class="result">
+
+<span class="result-title">
+الربح
+</span>
+
+<span
+id="profit"
+class="result-value">
+0 جنيه
+</span>
+
+</div>
+
+
+<div class="result">
+
+<span class="result-title">
+نسبة الربح
+</span>
+
+<span
+id="profitPercent"
+class="result-value">
+0 %
+</span>
+
+</div>
+
+
+</div>
 
 
 
 <div class="section">
 
-<h2>🧾 التكلفة</h2>
+<h2>🏷️ الخصم</h2>
 
-<label>سعر الشراء</label>
 
-<input
-id="buyPrice"
-type="number"
-placeholder="مثال: 150">
-
-<label>المصاريف الإضافية</label>
+<label>
+سعر البيع قبل الخصم
+</label>
 
 <input
-id="extraCost"
+id="priceBeforeDiscount"
 type="number"
-value="20"
-readonly>
+placeholder="مثال: 500">
+
+
+<label>
+نسبة الخصم %
+</label>
+
+<input
+id="discountPercent"
+type="number"
+placeholder="مثال: 10">
+
 
 <div class="result">
 
 <span class="result-title">
-التكلفة الحقيقية
+السعر بعد الخصم
+</span>
+
+<span
+id="discountPrice"
+class="result-value">
+0 جنيه
+</span>
+
+</div>
+
+
+</div>
+
+
+
+<div class="section">
+
+<h2>🚚 الشحن</h2>
+
+
+<label>
+تكلفة الشحن
+</label>
+
+<input
+id="shipping"
+type="number"
+placeholder="مثال: 50">
+
+
+<div class="result">
+
+<span class="result-title">
+التكلفة النهائية
 </span>
 
 <span
 id="totalCost"
 class="result-value">
-
 0 جنيه
-
 </span>
 
 </div>
 
-</div>
-
-
-
-<div class="section">
-
-<h2>💰 التسعير</h2>
-
-<label>نسبة الربح المطلوبة %</label>
-
-<input
-id="desiredProfit"
-type="number"
-placeholder="مثال: 50">
-
-<div class="result">
-
-<span class="result-title">
-
-سعر البيع المقترح
-
-</span>
-
-<span
-id="suggestedPrice"
-class="result-value">
-
-0 جنيه
-
-</span>
-
-</div>
 
 </div>
 <div class="section">
 
 <h2>🎁 العرض</h2>
 
-<label>سعر البيع</label>
+
+<label>
+سعر البيع
+</label>
 
 <input
 id="sellPrice"
 type="number"
 placeholder="مثال: 350">
 
-<label>نسبة الخصم %</label>
+
+<label>
+نسبة الخصم %
+</label>
 
 <input
 id="discount"
 type="number"
 placeholder="مثال: 10">
+
 
 <div class="result">
 
@@ -139,6 +373,7 @@ class="result-value">
 
 </div>
 
+
 <div class="result">
 
 <span class="result-title">
@@ -157,6 +392,7 @@ class="result-value">
 
 </div>
 
+
 </div>
 
 
@@ -171,13 +407,38 @@ class="result-value">
 
 <div class="footer">
 
-© Ghazal Calculator
+© 2026 Ghazal Calculator
 
 </div>
 
+
 </div>
+
+
 
 <script src="script.js"></script>
+
+
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+window.addEventListener("load", () => {
+
+navigator.serviceWorker.register("service-worker.js")
+
+.then(() => console.log("PWA Ready"))
+
+.catch(error => console.log(error));
+
+});
+
+}
+
+</script>
+
+
 
 </body>
 
