@@ -24,7 +24,15 @@
 
 
 <body>
+<div id="splash">
 
+<img src="logo.png" alt="غزل">
+
+<h1>غزل</h1>
+
+<p>حاسبة غزل</p>
+
+</div>
 <div class="container">
 
 
@@ -249,7 +257,15 @@ console.log("Service Worker Error:", error);
 </script>
 
 
+<script>
 
+setTimeout(function(){
+
+document.getElementById("splash").style.display="none";
+
+},2000);
+
+</script>
 </body>
 
 </html>
