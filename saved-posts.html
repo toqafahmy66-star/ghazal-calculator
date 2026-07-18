@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>البوستات المحفوظة | غزل</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="posts.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<img src="logo.png" class="logo">
+
+
+<h1>📸 البوستات المحفوظة</h1>
+
+
+
+
+<div class="section">
+
+
+<h2>🔎 بحث في البوستات</h2>
+
+
+<input
+id="searchCode"
+type="text"
+placeholder="ابحث بكود البوست">
+
+
+
+<select id="searchSupplier">
+
+
+<option value="">
+كل الموردين
+</option>
+
+
+<option value="WD">وديع</option>
+<option value="ML">ملاك</option>
+<option value="GH">الغول</option>
+<option value="BD">البنداري</option>
+<option value="MS">مصباح</option>
+<option value="BM">بابا المجال</option>
+<option value="MK">الملوك رجالي</option>
+
+
+</select>
+
+
+</div>
+
+
+
+
+
+<div class="section">
+
+
+<h2>💾 النسخة الاحتياطية</h2>
+
+
+<button id="exportBtn">
+⬇️ تصدير نسخة احتياطية
+</button>
+
+
+
+<br><br>
+
+
+
+<input
+id="importFile"
+type="file"
+accept=".json">
+
+
+
+<button id="importBtn">
+⬆️ استرجاع نسخة احتياطية
+</button>
+
+
+
+</div>
+
+
+
+
+
+
+<div id="savedPosts"></div>
+
+
+
+
+
+
+<div class="bottom-nav">
+
+
+<a href="index.html">
+🧮<br>
+الحاسبة
+</a>
+
+
+<a href="posts.html">
+➕<br>
+بوست جديد
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+<script src="saved-posts.js"></script>
+
+
+</body>
+
+
+</html>
