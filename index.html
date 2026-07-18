@@ -11,6 +11,10 @@
 
 <link rel="stylesheet" href="style.css">
 
+<link rel="manifest" href="manifest.json">
+
+<meta name="theme-color" content="#800020">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -18,17 +22,22 @@
 
 </head>
 
+
 <body>
 
 <div class="container">
 
+
 <img src="logo.png" class="logo" alt="غزل">
 
+
 <h1>حاسبة غزل</h1>
+
 
 <p class="subtitle">
 احسبي تكلفة وتسعير منتجات غزل بكل احترافية
 </p>
+
 
 <div class="divider"></div>
 
@@ -36,7 +45,9 @@
 
 <div class="section">
 
+
 <h2>🧾 التكلفة</h2>
+
 
 <label>سعر الشراء</label>
 
@@ -44,6 +55,7 @@
 id="buyPrice"
 type="number"
 placeholder="مثال: 150">
+
 
 <label>المصاريف الإضافية</label>
 
@@ -53,11 +65,15 @@ type="number"
 value="20"
 readonly>
 
+
+
 <div class="result">
+
 
 <span class="result-title">
 التكلفة الحقيقية
 </span>
+
 
 <span
 id="totalCost"
@@ -67,15 +83,15 @@ class="result-value">
 
 </span>
 
-</div>
 
 </div>
 
 
-
+</div>
 <div class="section">
 
 <h2>💰 التسعير</h2>
+
 
 <label>نسبة الربح المطلوبة %</label>
 
@@ -84,13 +100,16 @@ id="desiredProfit"
 type="number"
 placeholder="مثال: 50">
 
+
 <div class="result">
+
 
 <span class="result-title">
 
 سعر البيع المقترح
 
 </span>
+
 
 <span
 id="suggestedPrice"
@@ -100,34 +119,50 @@ class="result-value">
 
 </span>
 
-</div>
 
 </div>
+
+
+</div>
+
+
+
+
 <div class="section">
+
 
 <h2>🎁 العرض</h2>
 
+
 <label>سعر البيع</label>
+
 
 <input
 id="sellPrice"
 type="number"
 placeholder="مثال: 350">
 
+
+
 <label>نسبة الخصم %</label>
+
 
 <input
 id="discount"
 type="number"
 placeholder="مثال: 10">
 
+
+
 <div class="result">
+
 
 <span class="result-title">
 
 السعر بعد الخصم
 
 </span>
+
 
 <span
 id="finalPrice"
@@ -137,15 +172,20 @@ class="result-value">
 
 </span>
 
+
 </div>
 
+
+
 <div class="result">
+
 
 <span class="result-title">
 
 الربح النهائي
 
 </span>
+
 
 <span
 id="finalProfit"
@@ -155,12 +195,11 @@ class="result-value">
 
 </span>
 
-</div>
 
 </div>
 
 
-
+</div>
 <button onclick="clearCalculator()">
 
 🗑️ مسح البيانات
@@ -175,9 +214,41 @@ class="result-value">
 
 </div>
 
+
 </div>
 
+
+
 <script src="script.js"></script>
+
+
+<script>
+
+if ("serviceWorker" in navigator) {
+
+window.addEventListener("load", function() {
+
+navigator.serviceWorker.register("service-worker.js")
+
+.then(function() {
+
+console.log("Ghazal PWA Ready");
+
+})
+
+.catch(function(error) {
+
+console.log("Service Worker Error:", error);
+
+});
+
+});
+
+}
+
+</script>
+
+
 
 </body>
 

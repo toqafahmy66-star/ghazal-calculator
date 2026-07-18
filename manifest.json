@@ -1,21 +1,14 @@
 {
   "name": "حاسبة غزل",
   "short_name": "غزل",
-  "description": "حاسبة تسعير ومنتجات غزل",
-  "start_url": "./",
-  "scope": "./",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#7c020b",
-  "theme_color": "#7c020b",
+  "background_color": "#ffffff",
+  "theme_color": "#800020",
   "orientation": "portrait",
   "icons": [
     {
-      "src": "logo.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "logo.png",
+      "src": "icon.png",
       "sizes": "512x512",
       "type": "image/png"
     }
