@@ -24,6 +24,7 @@
 
 
 <body>
+
 <div id="splash">
 
 <img src="logo.png" alt="غزل">
@@ -33,6 +34,8 @@
 <p>حاسبة غزل</p>
 
 </div>
+
+
 <div class="container">
 
 
@@ -74,29 +77,26 @@ value="20"
 readonly>
 
 
-
 <div class="result">
-
 
 <span class="result-title">
 التكلفة الحقيقية
 </span>
 
-
-<span
-id="totalCost"
-class="result-value">
-
+<span id="totalCost" class="result-value">
 0 جنيه
-
 </span>
 
-
 </div>
 
 
 </div>
+
+
+
+
 <div class="section">
+
 
 <h2>💰 التسعير</h2>
 
@@ -111,27 +111,19 @@ placeholder="مثال: 50">
 
 <div class="result">
 
-
 <span class="result-title">
-
 سعر البيع المقترح
-
 </span>
 
-
-<span
-id="suggestedPrice"
-class="result-value">
-
+<span id="suggestedPrice" class="result-value">
 0 جنيه
-
 </span>
 
-
 </div>
 
 
 </div>
+
 
 
 
@@ -151,7 +143,6 @@ type="number"
 placeholder="مثال: 350">
 
 
-
 <label>نسبة الخصم %</label>
 
 
@@ -161,25 +152,15 @@ type="number"
 placeholder="مثال: 10">
 
 
-
 <div class="result">
 
-
 <span class="result-title">
-
 السعر بعد الخصم
-
 </span>
 
-
-<span
-id="finalPrice"
-class="result-value">
-
+<span id="finalPrice" class="result-value">
 0 جنيه
-
 </span>
-
 
 </div>
 
@@ -187,36 +168,32 @@ class="result-value">
 
 <div class="result">
 
-
 <span class="result-title">
-
 الربح النهائي
-
 </span>
 
-
-<span
-id="finalProfit"
-class="result-value">
-
+<span id="finalProfit" class="result-value">
 0 جنيه
-
 </span>
 
-
 </div>
 
 
 </div>
+
+
+
+
 <button onclick="clearCalculator()">
-
 🗑️ مسح البيانات
-
 </button>
+
 
 <button onclick="window.location.href='posts.html'" class="posts-btn">
 📸 البوستات والمنتجات
 </button>
+
+
 
 <div class="footer">
 
@@ -229,25 +206,42 @@ class="result-value">
 
 
 
-<script src="script.js"></script>
+
 
 <script src="script.js"></script>
+
+
+
 
 <div class="bottom-nav">
 
+
 <a href="index.html" class="active">
-🧮<br>الحاسبة
+🧮<br>
+الحاسبة
 </a>
 
+
+
 <a href="posts.html">
-📸<br>البوستات
+📸<br>
+بوست جديد
 </a>
+
+
+
+<a href="saved-posts.html">
+📚<br>
+المنتجات المحفوظة
+</a>
+
+
 
 </div>
 
-</body>
 
-</html>
+
+
 
 <script>
 
@@ -276,6 +270,8 @@ console.log("Service Worker Error:", error);
 </script>
 
 
+
+
 <script>
 
 setTimeout(function(){
@@ -285,13 +281,9 @@ document.getElementById("splash").style.display="none";
 },2000);
 
 </script>
-<nav class="menu">
-    <a href="index.html">الحاسبة</a>
-    <a href="products.html">المنتجات</a>
-    <a href="posts.html">البوستات</a>
-    <a href="add-products.html">إضافة منتج</a>
-    <a href="add-post.html">إضافة بوست</a>
-</nav>
+
+
+
 </body>
 
 </html>

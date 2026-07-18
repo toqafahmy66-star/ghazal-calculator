@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 
 <head>
 
@@ -19,28 +19,47 @@
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
 <img src="logo.png" class="logo" alt="غزل">
 
+
 <h1>📸 البوستات والمنتجات</h1>
+
 
 <p class="subtitle">
 إدارة بوستات ومنتجات غزل
 </p>
 
+
 <div class="divider"></div>
+
+
+
+
+
 <div class="section">
+
 
 <h2>📸 بيانات البوست</h2>
 
+
+
 <label>المورد</label>
+
 
 <select id="supplier">
 
-<option value="">اختر المورد</option>
+
+<option value="">
+اختر المورد
+</option>
+
 
 <option value="WD">وديع</option>
 
@@ -56,22 +75,38 @@
 
 <option value="MK">الملوك رجالي</option>
 
+
 </select>
 
+
+
+
+
 <label>تاريخ البوست</label>
+
 
 <input
 id="postDate"
 type="date">
 
+
+
+
+
 <label>رقم البوست</label>
+
 
 <input
 id="postNumber"
 type="number"
 placeholder="مثال: 001">
 
+
+
+
+
 <label>كود البوست</label>
+
 
 <input
 id="postCode"
@@ -79,28 +114,81 @@ type="text"
 readonly
 placeholder="سيظهر تلقائيًا">
 
+
+
+
+
 <label>رابط البوست</label>
+
 
 <input
 id="postLink"
 type="url"
 placeholder="الصق رابط البوست هنا">
+
+
+
+
+
 <button id="nextBtn" type="button">
+
 التالي ➡️
+
 </button>
+
+
+
 </div>
-<script src="posts.js"></script>
+
+
+
+
+
+
+
 <div class="bottom-nav">
 
+
 <a href="index.html">
-🧮<br>الحاسبة
+
+🧮<br>
+الحاسبة
+
 </a>
 
-<a href="posts.html" class="active">
-📸<br>البوستات
+
+
+<a href="posts.html" class="active" onclick="newPost()">
+
+📸<br>
+البوستات
+
 </a>
+
+
+
+<a href="saved-posts.html">
+
+📚<br>
+المنتجات المحفوظة
+
+</a>
+
 
 </div>
+
+
+
+
+
+
+<script src="posts.js"></script>
+
+
+
+</div>
+
+
 </body>
 
 </html>
