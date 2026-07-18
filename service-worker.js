@@ -1,5 +1,4 @@
-const CACHE_NAME = "ghazal-calculator-v3";
-
+const CACHE_NAME = "ghazal-calculator-v4";
 const FILES = [
   "./",
   "index.html",

@@ -3,8 +3,8 @@
   "short_name": "غزل",
   "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#800020",
+  "background_color": "#800020",
+"theme_color": "#800020"
   "orientation": "portrait",
   "lang": "ar",
   "dir": "rtl",
