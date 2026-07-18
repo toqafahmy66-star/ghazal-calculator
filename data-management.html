@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إدارة البيانات | غزل</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>🧹 إدارة البيانات</h1>
+
+<div class="section">
+
+<h2 class="center-title">
+البيانات والتخزين
+</h2>
+
+<p style="text-align:center; color:#777; margin-top:20px;">
+من هنا يمكنك إدارة بيانات التطبيق
+</p>
+
+<button onclick="clearData()">
+🗑️ حذف كل البيانات
+</button>
+
+</div>
+
+<a href="settings.html" class="back-btn">
+⬅ العودة للإعدادات
+</a>
+
+</div>
+
+
+<script>
+
+function clearData(){
+
+let confirmDelete = confirm(
+"هل أنت متأكد من حذف جميع البيانات؟"
+);
+
+if(confirmDelete){
+
+localStorage.clear();
+
+alert(
+"تم حذف البيانات بنجاح"
+);
+
+}
+
+}
+
+</script>
+
+
+</body>
+
+</html>
