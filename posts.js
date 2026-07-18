@@ -10,7 +10,117 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    const isEditing = localStorage.getItem("isEditing") === "true";
+    // ===========================
+    // تحميل الموردين من الإعدادات
+    // ===========================
+
+    const defaultSuppliers = [
+
+        {
+            code:"WD",
+            name:"وديع"
+        },
+
+        {
+            code:"ML",
+            name:"ملاك"
+        },
+
+        {
+            code:"GH",
+            name:"الغول"
+        },
+
+        {
+            code:"BD",
+            name:"البنداري"
+        },
+
+        {
+            code:"MS",
+            name:"مصباح"
+        },
+
+        {
+            code:"BM",
+            name:"بابا المجال"
+        },
+
+        {
+            code:"MK",
+            name:"الملوك رجالي"
+        }
+
+    ];
+
+
+
+    const suppliers =
+    JSON.parse(localStorage.getItem("suppliers"))
+    || defaultSuppliers;
+
+
+
+    function loadSuppliers(selectedValue=""){
+
+
+        supplier.innerHTML = "";
+
+
+        const firstOption =
+        document.createElement("option");
+
+
+        firstOption.value = "";
+
+        firstOption.textContent =
+        "اختر المورد";
+
+
+        supplier.appendChild(firstOption);
+
+
+
+        suppliers.forEach(item=>{
+
+
+            const option =
+            document.createElement("option");
+
+
+            option.value =
+            item.code;
+
+
+            option.textContent =
+            item.name;
+
+
+
+            if(item.code === selectedValue){
+
+                option.selected = true;
+
+            }
+
+
+
+            supplier.appendChild(option);
+
+
+
+        });
+
+
+
+    }
+
+
+
+
+    const isEditing =
+    localStorage.getItem("isEditing") === "true";
+
 
     let editPost = null;
 
@@ -18,11 +128,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if(isEditing){
 
-        const saved = localStorage.getItem("editPost");
+
+        const saved =
+        localStorage.getItem("editPost");
+
 
         if(saved){
 
-            editPost = JSON.parse(saved);
+            editPost =
+            JSON.parse(saved);
 
         }
 
@@ -30,28 +144,39 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-    // تحميل بيانات التعديل فقط
+    // تحميل البيانات في حالة التعديل
 
     if(editPost){
 
 
-        supplier.value = editPost.supplier || "";
+        loadSuppliers(editPost.supplier);
 
-        postDate.value = editPost.date || "";
 
-        postNumber.value = editPost.number || "";
+        supplier.value =
+        editPost.supplier || "";
 
-        postCode.value = editPost.code || "";
 
-        postLink.value = editPost.link || "";
+        postDate.value =
+        editPost.date || "";
+
+
+        postNumber.value =
+        editPost.number || "";
+
+
+        postCode.value =
+        editPost.code || "";
+
+
+        postLink.value =
+        editPost.link || "";
 
 
     }
-
     else{
+
+
+        loadSuppliers();
 
 
         supplier.value = "";
@@ -66,14 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     }
-
-
-
-
-
-
-
-
     function generatePostCode(){
 
 
@@ -91,27 +208,26 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-        const date = new Date(postDate.value);
+        const date =
+        new Date(postDate.value);
 
 
 
-        const day = String(
-            date.getDate()
-        ).padStart(2,"0");
+        const day =
+        String(date.getDate())
+        .padStart(2,"0");
 
 
 
-        const month = String(
-            date.getMonth()+1
-        ).padStart(2,"0");
+        const month =
+        String(date.getMonth()+1)
+        .padStart(2,"0");
 
 
 
-        const number = String(
-            parseInt(postNumber.value)
-        ).padStart(3,"0");
-
-
+        const number =
+        String(parseInt(postNumber.value))
+        .padStart(3,"0");
 
 
 
@@ -124,11 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
         number;
 
 
-
     }
-
-
-
 
 
 
@@ -138,7 +250,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "change",
         generatePostCode
     );
-
 
 
     postDate.addEventListener(
@@ -151,7 +262,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "input",
         generatePostCode
     );
-
 
 
     postNumber.addEventListener(
@@ -164,10 +274,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-
-
-    // نسخ الكود بالضغط على الكود نفسه
 
     postCode.addEventListener(
         "click",
@@ -191,16 +297,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try{
 
+
                 document.execCommand("copy");
 
-                alert("تم نسخ كود البوست");
+
+                alert(
+                    "تم نسخ كود البوست"
+                );
 
 
             }
 
             catch(error){
 
-                alert("لم يتم النسخ");
+
+                alert(
+                    "لم يتم النسخ"
+                );
+
 
             }
 
@@ -216,9 +330,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-
-    // زر التالي
-
     nextBtn.addEventListener(
         "click",
         ()=>{
@@ -226,7 +337,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if(!supplier.value){
 
-                alert("اختاري المورد");
+                alert(
+                    "اختاري المورد"
+                );
+
                 return;
 
             }
@@ -235,7 +349,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if(!postDate.value){
 
-                alert("اختاري التاريخ");
+                alert(
+                    "اختاري التاريخ"
+                );
+
                 return;
 
             }
@@ -244,7 +361,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if(!postNumber.value){
 
-                alert("اكتبي رقم البوست");
+                alert(
+                    "اكتبي رقم البوست"
+                );
+
                 return;
 
             }
@@ -253,12 +373,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
             if(!postLink.value){
 
-                alert("أضيفي رابط البوست");
+                alert(
+                    "أضيفي رابط البوست"
+                );
+
                 return;
 
             }
-
-
 
 
 
@@ -268,15 +389,25 @@ document.addEventListener("DOMContentLoaded", () => {
             const postData = {
 
 
-                supplier:supplier.value,
+                supplier:
+                supplier.value,
 
-                date:postDate.value,
 
-                number:postNumber.value,
+                date:
+                postDate.value,
 
-                code:postCode.value,
 
-                link:postLink.value
+                number:
+                postNumber.value,
+
+
+                code:
+                postCode.value,
+
+
+                link:
+                postLink.value
+
 
 
             };
@@ -287,11 +418,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
             localStorage.setItem(
+
                 "currentPost",
+
                 JSON.stringify(postData)
+
             );
-
-
 
 
 
@@ -304,7 +436,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         }
     );
-
 
 
 });

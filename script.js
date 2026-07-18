@@ -12,6 +12,32 @@ const finalPrice = document.getElementById("finalPrice");
 const finalProfit = document.getElementById("finalProfit");
 
 
+// ============================
+// تحميل إعدادات التسعير
+// ============================
+
+const savedExtra =
+localStorage.getItem("defaultExpenses");
+
+const savedProfit =
+localStorage.getItem("defaultProfit");
+
+if(savedExtra !== null){
+
+    extraCost.value = savedExtra;
+
+}
+
+if(savedProfit !== null){
+
+    desiredProfit.value = savedProfit;
+
+}
+
+
+// ============================
+// الحاسبة
+// ============================
 
 function calculate() {
 
@@ -22,59 +48,58 @@ function calculate() {
     let sell = Number(sellPrice.value);
     let dis = Number(discount.value);
 
-
-
     // التكلفة الحقيقية
     let cost = buy + extra;
-
 
     // سعر البيع المقترح
     let suggested = cost + (cost * profitPercent / 100);
 
-
-
     // السعر بعد الخصم
     let afterDiscount = sell - (sell * dis / 100);
-
-
 
     // الربح النهائي بعد الخصم
     let profit = afterDiscount - cost;
 
-
-
     totalCost.innerHTML = cost.toFixed(2);
-
     suggestedPrice.innerHTML = suggested.toFixed(2);
-
     finalPrice.innerHTML = afterDiscount.toFixed(2);
-
     finalProfit.innerHTML = profit.toFixed(2);
 
 }
 
-
-
-
 buyPrice.addEventListener("input", calculate);
+extraCost.addEventListener("input", calculate);
 desiredProfit.addEventListener("input", calculate);
 sellPrice.addEventListener("input", calculate);
 discount.addEventListener("input", calculate);
 
 
+// أول حساب بعد تحميل الإعدادات
+calculate();
 
+
+// ============================
+// مسح الحاسبة
+// ============================
 
 function clearCalculator(){
 
     buyPrice.value = "";
-    desiredProfit.value = "";
+
+    extraCost.value =
+    localStorage.getItem("defaultExpenses") || "";
+
+    desiredProfit.value =
+    localStorage.getItem("defaultProfit") || "";
+
     sellPrice.value = "";
     discount.value = "";
-
 
     totalCost.innerHTML = "0";
     suggestedPrice.innerHTML = "0";
     finalPrice.innerHTML = "0";
     finalProfit.innerHTML = "0";
+
+    calculate();
 
 }
