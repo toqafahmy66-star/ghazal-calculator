@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>إضافة بوست | غزل</title>
+
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="posts.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="logo.png" class="logo" alt="غزل">
+
+<h1>➕ إضافة بوست</h1>
+
+<p class="subtitle">
+أدخلي بيانات البوست قبل إضافة المنتجات
+</p>
+
+<div class="divider"></div>
+
+<div class="section">
+
+<h2>📸 بيانات البوست</h2>
+
+<label>المورد</label>
+
+<select id="supplier">
+
+<option value="">اختر المورد</option>
+
+<option value="WD">وديع</option>
+<option value="ML">ملاك</option>
+<option value="GH">الغول</option>
+<option value="BD">البنداري</option>
+<option value="MS">مصباح</option>
+<option value="BM">بابا المجال</option>
+<option value="MK">الملوك رجالي</option>
+
+</select>
+
+<label>تاريخ البوست</label>
+
+<input
+type="date"
+id="postDate">
+
+<label>رقم البوست</label>
+
+<input
+type="number"
+id="postNumber"
+placeholder="مثال: 001">
+
+<label>كود البوست</label>
+
+<div class="code-box">
+
+<input
+type="text"
+id="postCode"
+readonly
+placeholder="سيظهر تلقائيًا">
+
+<button
+type="button"
+id="copyCodeBtn">
+
+📋 نسخ
+
+</button>
+
+</div>
+
+<label>رابط البوست</label>
+
+<input
+type="url"
+id="postLink"
+placeholder="الصقي رابط البوست">
+
+</div>
+
+<button id="nextBtn" class="posts-btn">
+
+التالي ➜
+
+</button>
+
+</div>
+
+<script src="posts.js"></script>
+
+<div class="bottom-nav">
+
+<a href="index.html">
+🧮<br>الحاسبة
+</a>
+
+<a href="posts.html" class="active">
+📸<br>البوستات
+</a>
+
+</div>
+
+</body>
+
+</html>

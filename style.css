@@ -656,3 +656,49 @@ color:#777;
 font-size:18px;
 
 }
+.posts-btn{
+    width:100%;
+    margin-top:15px;
+    padding:14px;
+    border:none;
+    border-radius:14px;
+    font-size:18px;
+    font-weight:700;
+    cursor:pointer;
+    background:#8B1E3F;
+    color:#fff;
+    transition:.3s;
+}
+
+.posts-btn:hover{
+    opacity:.9;
+    transform:translateY(-2px);
+}
+.bottom-nav{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    background:#fff;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    padding:12px 0;
+    box-shadow:0 -2px 15px rgba(0,0,0,.08);
+    z-index:999;
+}
+
+.bottom-nav a{
+    text-decoration:none;
+    color:#666;
+    font-size:15px;
+    font-weight:700;
+}
+
+.bottom-nav a.active{
+    color:#8B1E3F;
+}
+
+body{
+    padding-bottom:90px;
+}
