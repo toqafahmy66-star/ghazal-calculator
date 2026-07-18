@@ -1,18 +1,36 @@
-const CACHE_NAME = "ghazal-calculator-v2";
+const CACHE_NAME = "ghazal-calculator-v3";
 
 const FILES = [
   "./",
   "index.html",
+  "calculator.html",
+  "home.html",
   "style.css",
   "script.js",
   "logo.png",
+  "manifest.json",
+
   "posts.html",
   "posts.js",
   "posts.css",
+
   "saved-posts.html",
   "saved-posts.js",
+
   "add-products.html",
-  "products.js"
+  "products.js",
+
+  "pricing-settings.html",
+  "pricing-settings.js",
+
+  "categories.html",
+  "categories.js",
+
+  "suppliers.html",
+  "suppliers.js",
+
+  "backup.html",
+  "backup.js"
 ];
 
 
@@ -31,7 +49,6 @@ self.addEventListener("install", event => {
   );
 
 });
-
 
 
 self.addEventListener("activate", event => {
@@ -61,7 +78,6 @@ self.addEventListener("activate", event => {
   );
 
 });
-
 
 
 self.addEventListener("fetch", event => {
